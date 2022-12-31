@@ -11,6 +11,7 @@ if '%launcher%'=='compmgmt' goto compmgmt
 if '%launcher%'=='run' goto yes
 if '%launcher%'=='taskmgr' goto taskmgr
 if '%launcher%'=='diskmgmt' goto diskmgmt
+if '%launcher%'=='control' goto cp
 if '%launcher%'=='no' goto no
 if '%launcher%'=='No' goto no
 if '%launcher%'=='NO' goto no
@@ -26,6 +27,7 @@ echo compmgmt - Computer Management
 echo diskmgmt - Disk Management
 echo run - Run dialog box (Win+R)
 echo taskmgr - Task Manager
+echo control - Control Panel
 
 :cmd
 cmd.exe
@@ -49,4 +51,8 @@ exit
 
 :taskmgr
 taskmgr.exe /0
+exit
+
+:cp
+powershell control panel
 exit
